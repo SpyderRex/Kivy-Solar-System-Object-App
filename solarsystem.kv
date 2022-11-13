@@ -1,0 +1,42 @@
+<MyBoxlayout>:
+    orientation: "vertical"
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "solar_system.jpg"
+    Label:
+        size_hint: (1, .1)
+        text: "Solar System Data App"
+        font_name: "SpaceMission-rgyw9.otf"
+        font_size: 60
+    Label:
+        id: object_label_id
+        size_hint: (1, .1)
+        text: "Choose an object"
+        font_size: 60
+        font_name: "arial.ttf"
+        
+    WrappedLabel:
+        id: feature_label_id
+        size_hint: (1, .1)
+        halign: "center"
+        text: ""
+        font_size: 40
+        font_name: "arial.ttf"     
+         
+    MyObjectSpinner:
+        id: object_spinner_id
+        size_hint: 1, None
+        height: 100
+        text: "Pick a solar system object"
+        font_name: "arial.ttf"
+        on_text: root.object_spinner_clicked(object_spinner_id.text)
+        
+    MyFeatureSpinner:
+        id: feature_spinner_id
+        size_hint: 1, None
+        height: 100
+        text: "Pick a feature"
+        font_name: "arial.ttf"
+        on_text: root.feature_spinner_clicked(feature_spinner_id.text)
